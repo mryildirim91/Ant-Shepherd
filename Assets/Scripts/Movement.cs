@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -10,9 +8,10 @@ public class Movement : MonoBehaviour
     {
         Move();   
     }
-
+    
     private void Move()
     {
-        transform.Translate(transform.up * _speed * Time.deltaTime,Space.World);
+        transform.Translate(transform.up * _speed * Time.deltaTime, Space.World);
     }
+    
 }
