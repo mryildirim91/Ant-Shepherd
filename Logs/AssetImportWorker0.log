@@ -140,3 +140,59 @@ Received Import Request.
 Start importing Assets/Prefabs/Levels/Level 1.prefab using Guid(67f2e8bc89f91374fb0fd2ef581d0fe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69591b0350b7f3dfeb92a059a166c9eb') in 0.367315 seconds 
   Import took 0.374113 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 157.993850 seconds.
+  path: Assets/Prefabs/Levels/Level 1.prefab
+  artifactKey: Guid(67f2e8bc89f91374fb0fd2ef581d0fe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level 1.prefab using Guid(67f2e8bc89f91374fb0fd2ef581d0fe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf81fe7838a8ddab2933b741f93b150') in 0.055829 seconds 
+  Import took 0.064443 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.490836 seconds.
+  path: Assets/Prefabs/Levels/Level 2.prefab
+  artifactKey: Guid(ccb4121e09cc30b4eab38e57cc4458c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level 2.prefab using Guid(ccb4121e09cc30b4eab38e57cc4458c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '764c1dff014b53e4cbb65540e86e43fd') in 0.051201 seconds 
+  Import took 0.057540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.308032 seconds.
+  path: Assets/Prefabs/Levels/Level 4.prefab
+  artifactKey: Guid(a4b53a2a473ac8748a1973ccb98b7a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level 4.prefab using Guid(a4b53a2a473ac8748a1973ccb98b7a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f643d61c9cfea1c5ad94ab2bbe7afc68') in 0.040676 seconds 
+  Import took 0.052413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.298843 seconds.
+  path: Assets/Prefabs/Levels/Level 6.prefab
+  artifactKey: Guid(7074c27f78396d84bbfafab2c1559478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level 6.prefab using Guid(7074c27f78396d84bbfafab2c1559478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24da437b8e571d6f6758bebf2b22569c') in 0.043461 seconds 
+  Import took 0.050286 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.301212 seconds.
+  path: Assets/Prefabs/Levels/Level 8.prefab
+  artifactKey: Guid(2aab1d426b01ad643817fbb3349996ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level 8.prefab using Guid(2aab1d426b01ad643817fbb3349996ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '007c62deccf236516595575d171bf544') in 0.049991 seconds 
+  Import took 0.056272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.364050 seconds.
+  path: Assets/Prefabs/Levels/Level 10.prefab
+  artifactKey: Guid(519284988939d5345b03372eb088b6a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level 10.prefab using Guid(519284988939d5345b03372eb088b6a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2219a957dbf1e46c9521a2a54cb31b49') in 0.037284 seconds 
+  Import took 0.043716 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 989.260404 seconds.
+  path: Assets/Prefabs/Levels/Level 5.prefab
+  artifactKey: Guid(61b5de1dd54a46c498407bc5863de9f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level 5.prefab using Guid(61b5de1dd54a46c498407bc5863de9f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c23c007501e273a22cf1a6cbd2983ee') in 0.665403 seconds 
+  Import took 0.673129 seconds .
+
