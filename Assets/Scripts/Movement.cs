@@ -13,5 +13,9 @@ public class Movement : MonoBehaviour
     {
         transform.Translate(transform.up * _speed * Time.deltaTime, Space.World);
     }
-    
+
+    public void StopMoving()
+    {
+        _speed = 0;
+    }
 }

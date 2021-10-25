@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Line
   - Obstacle
+  - Candy
+  - Ant
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Line
   - Ant
   - Obstacle
-  - 
+  - Candy
   - 
   - 
   - 

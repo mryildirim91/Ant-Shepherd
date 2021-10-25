@@ -14,10 +14,13 @@ public class LineDrawer : MonoBehaviour
     private GameObject _currentLine;
     private LineRenderer _lineRenderer;
     private EdgeCollider2D _edgeCollider2D;
-    private List<Vector2> _touchPositions = new List<Vector2>();
+    private readonly List<Vector2> _touchPositions = new List<Vector2>();
 
     private void Update()
     {
+        if(!GameManager.Instance.StartGame)
+            return;
+        
         if (Input.GetMouseButtonDown(0))
         {
             CreateLine();
