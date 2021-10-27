@@ -1,17 +1,14 @@
-using System;
+
 using System.Collections;
 using DG.Tweening;
 using MyUtils;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class Candy : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
-
-    private int _candyPoints;
-    [SerializeField] private Text _candyPointsText;
+    [SerializeField] private GameObject _pointsText;
     
     private void Awake()
     {
@@ -21,30 +18,21 @@ public class Candy : MonoBehaviour
     private void Start()
     {
         StartCoroutine(AnimateCandy());
-        _candyPoints = PlayerPrefs.GetInt("Candy Points");
-        UpdateCandyPointsText();
     }
-
-    private void OnEnable()
-    {
-        EventManager.ONAntEntersAnthillEvent += UpdateCandyPointsText;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.ONAntEntersAnthillEvent -= UpdateCandyPointsText;
-    }
-
+    
     private IEnumerator AnimateCandy()
     {
         while (true)
         {
-            transform.DOScale(0.7f, 1);
-            _spriteRenderer.DOFade(0.5f, 1);
-            yield return BetterWaitForSeconds.Wait(1.2f);
-            transform.DOScale(1, 1);
-            _spriteRenderer.DOFade(1, 1);
-            yield return BetterWaitForSeconds.Wait(1.2f);
+            if (_spriteRenderer != null)
+            {
+                transform.DOScale(0.7f, 1);
+                _spriteRenderer.DOFade(0.5f, 1);
+                yield return BetterWaitForSeconds.Wait(1.2f);
+                transform.DOScale(1, 1);
+                _spriteRenderer.DOFade(1, 1);
+                yield return BetterWaitForSeconds.Wait(1.2f);
+            }
         }
     }
 
@@ -57,14 +45,14 @@ public class Candy : MonoBehaviour
     {
         if (other.CompareTag("Ant"))
         {
-            _candyPoints += Random.Range(5,18);
-            PlayerPrefs.SetInt("Candy Points",_candyPoints);
-            UpdateCandyPointsText();
-        }
-    }
+            int points = Random.Range(5, 18);
+            EventManager.TriggerAntCollectsCandy(points);
+            GameObject obj = Instantiate(_pointsText);
 
-    private void UpdateCandyPointsText()
-    {
-        _candyPointsText.text = PlayerPrefs.GetInt("Candy Points").ToString();
+            RectTransform rect = obj.GetComponent<RectTransform>();
+            rect.anchoredPosition = transform.position + Vector3.up;
+            TextMeshPro textMeshPro = GetComponent<TextMeshPro>();
+            textMeshPro.text = "+" + points;
+        }
     }
 }

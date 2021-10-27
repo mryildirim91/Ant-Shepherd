@@ -47,6 +47,7 @@ namespace MyUtils
         private GameObject CreateNewObject(GameObject clone)
         {
             GameObject obj = Instantiate(clone);
+            obj.name = clone.name;
             return obj;
         }
     }

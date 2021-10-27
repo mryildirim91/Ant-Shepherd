@@ -61,7 +61,6 @@ public class AntSpawner : MonoBehaviour
 
         if (_numOfAliveAnts < 1)
         {
-            Debug.Log("Game Over");
             EventManager.TriggerGameOverEvent();
         }
     }

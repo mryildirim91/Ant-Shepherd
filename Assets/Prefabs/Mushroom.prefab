@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4514605236648151161}
   - component: {fileID: 5828262478948448435}
   - component: {fileID: 6744308768366168349}
+  - component: {fileID: -1873661300887492028}
   m_Layer: 8
   m_Name: Mushroom
   m_TagString: Obstacle
@@ -99,3 +100,16 @@ CircleCollider2D:
   m_Offset: {x: -0.045009494, y: 0.008183479}
   serializedVersion: 2
   m_Radius: 1.6211692
+--- !u!114 &-1873661300887492028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2250413134449998828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c42c9c158e55040ab94e486f448149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacleType: 0
