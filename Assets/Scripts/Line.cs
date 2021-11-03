@@ -16,7 +16,7 @@ public class Line : MonoBehaviour
         _edgeCollider2D = GetComponent<EdgeCollider2D>();
     }
 
-    private void OnDisable()
+    private void OnEnable()
     {
         _lineRenderer.material.DOFade(1, 0);
         if (_lineRenderer.positionCount > 2)
@@ -28,7 +28,7 @@ public class Line : MonoBehaviour
 
     public void StartDestroying()
     {
-        Invoke(nameof(DelayDestroy), 10);
+        //Invoke(nameof(DelayDestroy), 15);
     }
 
     private void DelayDestroy()

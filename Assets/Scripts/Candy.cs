@@ -1,15 +1,17 @@
 
+using System;
 using System.Collections;
 using DG.Tweening;
 using MyUtils;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Candy : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
     [SerializeField] private GameObject _pointsText;
-    
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,6 +19,7 @@ public class Candy : MonoBehaviour
 
     private void Start()
     {
+        
         StartCoroutine(AnimateCandy());
     }
     
@@ -51,7 +54,7 @@ public class Candy : MonoBehaviour
 
             RectTransform rect = obj.GetComponent<RectTransform>();
             rect.anchoredPosition = transform.position + Vector3.up;
-            TextMeshPro textMeshPro = GetComponent<TextMeshPro>();
+            TextMeshPro textMeshPro = obj.GetComponent<TextMeshPro>();
             textMeshPro.text = "+" + points;
         }
     }

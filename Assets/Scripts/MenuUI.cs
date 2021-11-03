@@ -79,12 +79,22 @@ public class MenuUI : MonoBehaviour
 
     private void OpenNextPanel()
     {
+        Invoke(nameof(DelayNextPanel),2);
+    }
+
+    private void DelayNextPanel()
+    {
         _nextPanel.SetActive(true);
         StartCoroutine(OpenStars());
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
     }
 
     private void OpenGameOverPanel()
+    {
+        Invoke(nameof(DelayGameOverPanel),2);
+    }
+
+    private void DelayGameOverPanel()
     {
         _gameOverPanel.SetActive(true);
     }

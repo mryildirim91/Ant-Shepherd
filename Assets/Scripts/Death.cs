@@ -21,6 +21,8 @@ public class Death : MonoBehaviour
         EventManager.TriggerAntDeathEvent();
         GetComponentInChildren<Animator>().SetTrigger(Animator.StringToHash("Death"));
         SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        spriteRenderer.DOFade(0, 5f);
+        
+        if(spriteRenderer != null)
+            spriteRenderer.DOFade(0, 5f);
     }
 }

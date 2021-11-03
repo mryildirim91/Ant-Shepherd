@@ -1,9 +1,8 @@
-
-using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using MyUtils;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LineDrawer : MonoBehaviour
 {
@@ -11,6 +10,7 @@ public class LineDrawer : MonoBehaviour
     [SerializeField] private GameObject _line, _pencil;
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _layers;
+    [SerializeField] private Text _linesText;
 
     private int _numOFLines = 4;
     private bool _stopDrawingLine;
@@ -19,6 +19,11 @@ public class LineDrawer : MonoBehaviour
     private LineRenderer _lineRenderer;
     private EdgeCollider2D _edgeCollider2D;
     private readonly List<Vector2> _touchPositions = new List<Vector2>();
+
+    private void Start()
+    {
+        _linesText.text = (_numOFLines - 1).ToString();
+    }
 
     private void OnEnable()
     {
@@ -48,8 +53,8 @@ public class LineDrawer : MonoBehaviour
                 _stopDrawingLine = true;
 
             if (Vector2.Distance(endPos, _touchPositions[_touchPositions.Count - 1]) > _lineDensity && !_stopDrawingLine)
-            { 
-                _pencil.gameObject.transform.DOMove(endPos, 0);
+            {
+                _pencil.transform.DOMove(endPos, 0);
                 UpdateLine(endPos);
             }
         }
@@ -57,7 +62,12 @@ public class LineDrawer : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             if (_numOFLines > 0)
+            {
                 _numOFLines--;
+                _linesText.text = _numOFLines.ToString();
+            }
+                
+
             
             _stopDrawingLine = false;
             _pencil.SetActive(false);
