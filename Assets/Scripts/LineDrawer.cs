@@ -24,17 +24,7 @@ public class LineDrawer : MonoBehaviour
     {
         _linesText.text = (_numOFLines - 1).ToString();
     }
-
-    private void OnEnable()
-    {
-        EventManager.ONLineGoneEvent += IncreaseNumberOfLines;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.ONLineGoneEvent -= IncreaseNumberOfLines;
-    }
-
+    
     private void Update()
     {
         if (!GameManager.Instance.StartGame || _numOFLines < 1)
@@ -66,14 +56,8 @@ public class LineDrawer : MonoBehaviour
                 _numOFLines--;
                 _linesText.text = _numOFLines.ToString();
             }
-                
-
-            
             _stopDrawingLine = false;
             _pencil.SetActive(false);
-            
-            if(_currentLine != null) 
-                _currentLine.GetComponent<Line>().StartDestroying();
         }
     }
 
@@ -105,13 +89,5 @@ public class LineDrawer : MonoBehaviour
         _lineRenderer.positionCount = positionCount;
         _lineRenderer.SetPosition(positionCount - 1, touchPos);
         _edgeCollider2D.points = _touchPositions.ToArray();
-    }
-
-    private void IncreaseNumberOfLines()
-    {
-        if (_numOFLines < 3)
-        {
-            _numOFLines++;
-        }
     }
 }

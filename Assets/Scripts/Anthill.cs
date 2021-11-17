@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -30,9 +27,10 @@ public class Anthill : MonoBehaviour
     private void CheckRemainingAnts()
     {
         if(_numOfAntsEntered < 1) return;
-        
+
         if (_numOfAntsEntered == PlayerPrefs.GetInt("Alive Ants"))
+        {
             EventManager.TriggerLevelCompleteEvent();
-        
+        }
     }
 }

@@ -1,17 +1,15 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using MyUtils;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class MenuUI : MonoBehaviour
 {
-    private int _candyPoints;
+    private int _candyPoints, _price;
     [SerializeField] private GameObject _gameOverPanel, _nextPanel;
     [SerializeField] private Text _startButtonText;
-    [SerializeField] private Text _candyPointsText;
+    [SerializeField] private Text _candyPointsText, _priceText;
     [SerializeField] private Button _moreAntButton;
     [SerializeField] private Image[] _stars;
 
@@ -20,6 +18,9 @@ public class MenuUI : MonoBehaviour
         StartCoroutine(FadeInAndOut());
         _candyPoints = PlayerPrefs.GetInt("Candy Points");
         UpdateCandyPointsText();
+
+        _price = !PlayerPrefs.HasKey("Price") ? 100 : PlayerPrefs.GetInt("Price");
+        _priceText.text = "-" + _price;
     }
 
     private void OnEnable()
@@ -51,11 +52,11 @@ public class MenuUI : MonoBehaviour
 
     private void Update()
     {
-        if (_candyPoints < 100 && _moreAntButton.interactable)
+        if (_candyPoints < _price && _moreAntButton.interactable)
         {
             _moreAntButton.interactable = false;
         }
-        else if (_candyPoints >= 100 && !_moreAntButton.interactable)
+        else if (_candyPoints >= _price && !_moreAntButton.interactable)
         {
             _moreAntButton.interactable = true;
         }
@@ -63,17 +64,40 @@ public class MenuUI : MonoBehaviour
 
     public void SpendCandyPoints(Text candyPointsText)
     {
-        _candyPoints -= 100;
+        _candyPoints -= _price;
+        _price += 100;
         candyPointsText.text = _candyPoints.ToString();
         PlayerPrefs.SetInt("Candy Points", _candyPoints);
+        PlayerPrefs.SetInt("Price",_price);
+        _priceText.text = "-" + _price;
     }
-
-    private IEnumerator OpenStars()
+    
+    private void OpenStars()
     {
-        foreach (var t in _stars)
+        float ratio = (float)PlayerPrefs.GetInt("Alive Ants") / PlayerPrefs.GetInt("Total Ants");
+        
+        if (ratio < 0.4f)
+        {
+            StartCoroutine(DelayOpenStars(2));
+        }
+        else if (ratio >= 0.4f && ratio < 0.8f)
+        {
+            StartCoroutine(DelayOpenStars(1));
+        }
+        else
+        {
+            StartCoroutine(DelayOpenStars(0));
+        }
+        
+        PlayerPrefs.SetInt("Total Ants", PlayerPrefs.GetInt("Alive Ants"));
+    }
+    
+    private IEnumerator DelayOpenStars(int indexReducer)
+    {
+        for (int i = 0; i < _stars.Length - indexReducer; i++)
         {
             yield return BetterWaitForSeconds.Wait(0.2f);
-            t.gameObject.SetActive(true);
+            _stars[i].gameObject.SetActive(true);
         }
     }
 
@@ -85,7 +109,7 @@ public class MenuUI : MonoBehaviour
     private void DelayNextPanel()
     {
         _nextPanel.SetActive(true);
-        StartCoroutine(OpenStars());
+        OpenStars();
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
     }
 

@@ -26,9 +26,9 @@ MonoBehaviour:
   UserMessagesFailed: 0
   CustomArea: 
   gameKey:
-  - a268cfb1d243d65f3e2d2c5eac07ce0e
+  - dc68638ed95b820b6007bf925f2e70a3
   secretKey:
-  - fdcfeb8ed8fe962897d3870e6ababa5fc0baa577
+  - 414d54116326a48aeda9fb0e69373dfda1c2fd05
   Build:
   - 0.1
   SelectedPlatformOrganization:
@@ -37,7 +37,7 @@ MonoBehaviour:
   - Laf Games
   SelectedPlatformGame:
   - Ant Shepherd
-  SelectedPlatformGameID: 4b9a0200
+  SelectedPlatformGameID: 809d0200
   SelectedOrganization: 01000000
   SelectedStudio: 01000000
   SelectedGame: 01000000
@@ -63,7 +63,7 @@ MonoBehaviour:
   ResourceItemTypes: []
   ResourceCurrencies: []
   LastCreatedGamePlatform: 0
-  Platforms: 08000000
+  Platforms: 0b000000
   CurrentInspectorState: 1
   ClosedHints: 
   DisplayHints: 0

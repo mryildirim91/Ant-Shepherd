@@ -25,18 +25,4 @@ public class Line : MonoBehaviour
         if (_edgeCollider2D.pointCount > 0)
             _edgeCollider2D.Reset();
     }
-
-    public void StartDestroying()
-    {
-        //Invoke(nameof(DelayDestroy), 15);
-    }
-
-    private void DelayDestroy()
-    {
-        _lineRenderer.material.DOFade(0, 1).OnComplete(() =>
-        {
-            EventManager.TriggerLineGoneEvent();
-            ObjectPool.Instance.ReturnGameObject(gameObject);
-        });
-    }
 }

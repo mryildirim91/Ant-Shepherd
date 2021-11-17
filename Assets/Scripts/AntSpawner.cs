@@ -70,6 +70,7 @@ public class AntSpawner : MonoBehaviour
         _numOfAnts++;
         _numOfAliveAnts++;
         _numOfAliveAntsText.text = _numOfAliveAnts.ToString();
+        PlayerPrefs.SetInt("Total Ants", _numOfAliveAnts);
         PlayerPrefs.SetInt("Alive Ants", _numOfAliveAnts);
     }
 }
