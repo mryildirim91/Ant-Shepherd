@@ -31,6 +31,7 @@ public class Anthill : MonoBehaviour
         if (_numOfAntsEntered == PlayerPrefs.GetInt("Alive Ants"))
         {
             EventManager.TriggerLevelCompleteEvent();
+            CancelInvoke(nameof(CheckRemainingAnts));
         }
     }
 }

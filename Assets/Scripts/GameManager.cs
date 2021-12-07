@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using GameAnalyticsSDK;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,10 +7,10 @@ public class GameManager : MonoBehaviour
 
     private bool _startGame;
     public bool StartGame => _startGame;
+    
     private void Awake()
     {
         Instance = this;
-        //GameAnalytics.Initialize();
     }
 
     public void RestartLevel()
