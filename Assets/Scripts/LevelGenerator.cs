@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
@@ -7,7 +6,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Awake()
     {
-        int level = PlayerPrefs.GetInt("Level");
+        var level = PlayerPrefs.GetInt("Level");
 
         if (level > _levels.Length - 1)
         {

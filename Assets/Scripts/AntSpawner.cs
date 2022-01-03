@@ -8,8 +8,8 @@ public class AntSpawner : MonoBehaviour
     private int _numOfAnts, _numOfAliveAnts;
     [SerializeField] private GameObject _ant;
     [SerializeField] private Text _numOfAliveAntsText;
-    
-    void Start()
+
+    private void Start()
     {
         if (PlayerPrefs.HasKey("Total Ants"))
         {

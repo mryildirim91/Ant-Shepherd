@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using MyUtils;
 using UnityEngine;
 
 public class Line : MonoBehaviour

@@ -7,12 +7,12 @@ namespace MyUtils
     {
         private class WaitForSeconds : CustomYieldInstruction
         {
-            private float waitUntil;
+            private float _waitUntil;
             public override bool keepWaiting
             {
                 get
                 {
-                    if (Time.time < waitUntil)
+                    if (Time.time < _waitUntil)
                         return true;
 
                     Pool(this);
@@ -22,18 +22,18 @@ namespace MyUtils
 
             public void Initialize(float seconds)
             {
-                waitUntil = Time.time + seconds;
+                _waitUntil = Time.time + seconds;
             }
         }
 
         private class WaitForSecondsRealtime : CustomYieldInstruction
         {
-            private float waitUntil;
+            private float _waitUntil;
             public override bool keepWaiting
             {
                 get
                 {
-                    if (Time.realtimeSinceStartup < waitUntil)
+                    if (Time.realtimeSinceStartup < _waitUntil)
                         return true;
 
                     Pool(this);
@@ -43,7 +43,7 @@ namespace MyUtils
 
             public void Initialize(float seconds)
             {
-                waitUntil = Time.realtimeSinceStartup + seconds;
+                _waitUntil = Time.realtimeSinceStartup + seconds;
             }
         }
 
